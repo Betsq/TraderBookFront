@@ -1,0 +1,77 @@
+.statistics{
+    border-collapse: collapse;
+}
+
+.statistics__header{
+    border-top: 1px solid #000;
+}
+
+.statistics__container-values{
+    border-top: 1px solid #000;
+}
+
+.statistics__container-values:last-child{
+    border-bottom: 1px solid #000;
+}
+
+.statistics__header-value{
+    text-align: left;
+}
+
+.statistics__value{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.statistics__header-value, .statistics__value{
+    padding: 10px;
+}
+
+.statistics__value-currency{
+    display: flex;
+    align-items: center;
+}
+
+.statistics__value-img{
+    height: 24px;
+    width: 24px; 
+}
+
+.statistics__value-short-name{
+    font-size: 12px;
+}
+
+.statistics__value-name, .statistics__value-short-name{
+    margin: 0 5px;
+}
+
+.statistics__value-increase{
+    color: #349800;
+}
+
+
+.statistics__value-decrease-icon::before, .statistics__value-increase-icon::before{
+    content: "";
+    width: 10px;
+    height: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.statistics__value-increase-icon::before{
+    background: url("../../../assets/images/arrow-up-increase.png");    
+    background-repeat: no-repeat;
+    background-size: 10px 5px;
+}
+
+.statistics__value-decrease-icon::before{
+    background: url("../../../assets/images/arrow-down-decrease.png"); 
+    background-repeat: no-repeat;
+    background-size: 10px 5px; 
+}
+
+
+
+.statistics__value-decrease{
+    color: #cc0003;
+}

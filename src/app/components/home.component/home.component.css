@@ -1,0 +1,46 @@
+.info-rate{
+    width: 100%;
+    display: flex;
+}
+
+.info-rate__data{
+    width: 100%;
+    background: #000;
+    margin: 7px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.info-rate__title{
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info-rate__container-currency{
+    font-size: 13px;
+}
+
+.info-rate__currency{
+    display: flex;
+    margin: 10px 0;
+}
+
+.info-rate__currency:last-child{
+    margin: 0;
+}
+
+.info-rate__currency-number{
+    color: rgb(75, 75, 75);
+    margin-right: 10px;
+}
+
+.info-rate__currency-name{
+    color: #fff;
+}
+
+.info-rate__currency-percent{
+    color: rgb(69, 255, 22);
+    margin-left: auto;
+}

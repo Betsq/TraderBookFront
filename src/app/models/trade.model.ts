@@ -1,15 +1,17 @@
 export class Trade {
-    date: Date;
-    pair: String;
-    position: String;
-    entryPrice: Number;
-    volume: Number;
-    shoulder: Number;
-    stop: Number;
-    takeProfit: Number;
-    exitPrice: Number;
-    time: Date;
-    comment: String;
-    profitOrLoss: Number;
-    percent: Number;
+   constructor(
+    public date?: Date,
+    public pair?: String,
+    public position?: String,
+    public entryPrice?: Number,
+    public volume?: Number,
+    public shoulder?: Number,
+    public stop?: Number,
+    public takeProfit?: Number,
+    public exitPrice?: Number,
+    public time?: Date,
+    public comment?: String,
+    public profitOrLoss?: Number,
+    public percent?: Number
+   ) {}
 }
