@@ -59,13 +59,13 @@
 }
 
 .statistics__value-increase-icon::before{
-    background: url("../../../assets/images/arrow-up-increase.png");    
+    background: url("../../../../assets/images//arrow-up-increase.png");    
     background-repeat: no-repeat;
     background-size: 10px 5px;
 }
 
 .statistics__value-decrease-icon::before{
-    background: url("../../../assets/images/arrow-down-decrease.png"); 
+    background: url("../../../../assets/images/arrow-down-decrease.png"); 
     background-repeat: no-repeat;
     background-size: 10px 5px; 
 }
