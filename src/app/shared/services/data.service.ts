@@ -5,27 +5,27 @@ import { environment } from '../../../environments/environment'
 
 @Injectable()
 export class DataService{
-    private api_url: string = environment.api_url;
+    protected api_url: string = environment.api_url;
 
-    protected constructor(protected http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-    protected Get(url: string, optionsHeader?: HttpHeaders) : Observable<any> {
+    public Get(url: string, optionsHeader?: HttpHeaders) : Observable<any> {
         return this.http.get(this.api_url + url, {headers: optionsHeader});
     }
 
-    protected GetById(url: string, id: any, optionsHeader?: HttpHeaders) : Observable<any>{
+    public GetById(url: string, id: any, optionsHeader?: HttpHeaders) : Observable<any>{
         return this.http.get(this.api_url + url + "/" + id, {headers: optionsHeader});
     }
 
-    protected Post(url: string, data: any, optionHeaders?: HttpHeaders) : Observable<any>{
+    public Post(url: string, data: any, optionHeaders?: HttpHeaders) : Observable<any>{
         return this.http.post(this.api_url + url, data, {headers: optionHeaders});
     }
     
-    protected Put(url: string, data: any, optionHeaders?: HttpHeaders) : Observable<any>{
+    public Put(url: string, data: any, optionHeaders?: HttpHeaders) : Observable<any>{
         return this.http.put(this.api_url + url, data, {headers: optionHeaders});
     }
 
-    protected Delete(url: string, id: any, optionHeaders?: HttpHeaders) : Observable<any>{
+    public Delete(url: string, id: any, optionHeaders?: HttpHeaders) : Observable<any>{
         return this.http.delete(this.api_url + url + "/" + id, {headers: optionHeaders});
     }
 }

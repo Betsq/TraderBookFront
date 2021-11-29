@@ -19,49 +19,50 @@
             </tr>
     </thead>
     <tbody>
-            <tr class="statistics__container-values">
-                    <td class="statistics__value">1</td>
+            <tr class="statistics__container-values" *ngFor="let item of spotTrade">
+                    <td class="statistics__value">{{setSpotTradeNumber()}}</td>
                     <td class="statistics__value">
                             <div class="statistics__value-currency"> 
                                     <img class="statistics__value-img" src="https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png">
                                     <div class="statistics__value-name">
-                                            Cardano   
+                                            {{item.coin.name}}  
                                     </div>
                                     <div class="statistics__value-short-name">
-                                            ADA
+                                            {{item.coin.symbol}}
                                     </div>
                             </div>
                     </td>
-                    <td class="statistics__value">50$</td>
+                    <td class="statistics__value">{{item.coin.purchasePrice}}$</td>
 
                     <td class="statistics__value">
                            <div class="statistics__value-decrease">
-                                   <span class="statistics__value-decrease-icon">
-
-                                   </span>
-                                    2.09%
+                                <span *nfIf="item.quotes.percent_change_24h > 0" class="statistics__value-increase-icon"></span>
+                                <span *nfIf="!item.quotes.percent_change_24h > 0" class="statistics__value-decrease-icon"></span>
+                                   {{item.quotes.percent_change_24h | number: '.1-2'}}%
                            </div>
                     </td>
                     <td class="statistics__value color">
                             <div class="statistics__value-increase">
-                                    <span class="statistics__value-increase-icon"></span>
-                                    7.3%
+                                <span *nfIf="item.quotes.percent_change_7d > 0" class="statistics__value-increase-icon"></span>
+                                <span *nfIf="!item.quotes.percent_change_7d > 0" class="statistics__value-decrease-icon"></span>
+                                {{item.quotes.percent_change_7d | number: '.1-2'}}%
                             </div>
                     </td>
                     <td class="statistics__value color">
                             <div class="statistics__value-increase">
-                                    <span class="statistics__value-increase-icon"></span>
-                                    20.46%
+                                <span *nfIf="item.quotes.percent_change_all_time > 0" class="statistics__value-increase-icon"></span>
+                                <span *nfIf="!item.quotes.percent_change_all_time > 0" class="statistics__value-decrease-icon"></span>
+                                {{item.quotes.percent_change_all_time | number: '.1-2'}}%
                             </div>
                     </td>
                     
 
-                    <td class="statistics__value">2.150$</td>
-                    <td class="statistics__value">2.345$</td>
+                    <td class="statistics__value">{{item.coin.entryPrice}}$</td>
+                    <td class="statistics__value">{{item.quotes.price | number: '.1-5'}}$</td>
 
-                    <td class="statistics__value">10/30/2021</td>
-                    <td class="statistics__value">19.4</td>
-                    <td class="statistics__value">Binance</td>
+                    <td class="statistics__value">{{item.coin.entryDate | date:"dd/MM/yyyy"}}</td>
+                    <td class="statistics__value">{{item.coin.volume}}</td>
+                    <td class="statistics__value">{{item.coin.market}}</td>
             </tr>
     </tbody>
 </table>

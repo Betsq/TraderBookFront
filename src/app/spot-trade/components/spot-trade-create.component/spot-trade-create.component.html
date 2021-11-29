@@ -1,39 +1,58 @@
+<!--<div>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name currency</mat-label>
+        <input type="text" matInput [(ngModel)]="spotTradeModel.name">
+        </mat-form-field>
+</div>
+<div>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Purchase price</mat-label>
+        <input type="number" matInput placeholder="0" min="0" step="0.01" [(ngModel)]="spotTradeModel.purchasePrice">
+    </mat-form-field>
+</div>
+<div>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Entry price</mat-label>
+        <input type="number" matInput placeholder="0" min="0" step="0.0001" [(ngModel)]="spotTradeModel.entryPrice">
+    </mat-form-field>
+</div>
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="spotTradeModel.entryDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+</div>
+<div>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Amount</mat-label>
+        <input type="number" matInput placeholder="0" min="0" step="0.01" [(ngModel)]="spotTradeModel.volume">
+    </mat-form-field>
+</div>
+<div>
+    <mat-form-field class="example-full-width" appearance="fill" [(ngModel)]="spotTradeModel.market">
+        <mat-label>Market</mat-label>
+        <input type="text" matInput>
+    </mat-form-field>
+</div>
 
-    <div>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Name currency</mat-label>
-            <input type="text" matInput>
-          </mat-form-field>
-    </div>
-    <div>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Purchase price</mat-label>
-            <input type="number" matInput placeholder="0" min="0" step="0.01">
-          </mat-form-field>
-    </div>
-    <div>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Entry price</mat-label>
-            <input type="number" matInput placeholder="0" min="0" step="0.0001">
-          </mat-form-field>
-    </div>
-    <div>
-        <mat-form-field appearance="fill">
-            <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="picker">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-    </div>
-    <div>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Amount</mat-label>
-            <input type="number" matInput placeholder="0" min="0">
-          </mat-form-field>
-    </div>
-    <div>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Market</mat-label>
-            <input type="text" matInput>
-          </mat-form-field>
-    </div>
+<div (click)="createSpotTrade()">Create</div>-->
+
+
+<style>
+    .ng-dropdown-panel{
+    font-size: 20px;
+    background: #000;
+}
+</style>
+<div style="background: #fff;">
+    <ng-select style="background: #fff;" [items]="cryptocurrency | async"
+           bindLabel="name"
+           autofocus
+           bindValue="_id"
+           [(ngModel)]="selectedId">
+</ng-select>
+</div>
+
+<br/> Selected: {{selectedId}}

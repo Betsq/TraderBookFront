@@ -1,10 +1,9 @@
-export class Trade {
+import { Coin } from "./coin.model"
+import { Quote } from "./quote.model"
+
+export class SpotTrade {
    constructor(
-      public name: String,
-      public purchasePrice: Number,
-      public entryPrice: Number,
-      public entryDate: Date,
-      public volume: Number,
-      public Market: String
+      public coin?: Coin,
+      public quotes?: Quote,
    ) {}
 }
